@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('login/register','login\LoginController@register');
+Route::post('login/registerto','login\LoginController@registerto');
+Route::get('Login/login','login\LoginController@login');
+Route::post('Login/loginto','login\LoginController@loginto');
+Route::any('/','login\IndexController@index');
