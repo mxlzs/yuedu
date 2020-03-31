@@ -13,24 +13,21 @@
     <link rel="stylesheet" href="/css/xadmin.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/lib/layui/layui.js" charset="utf-8"></script>
-    <!--[if lt IE 9]>
-    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="login-bg">
 
 <div class="login layui-anim layui-anim-up">
 
-    <div class="message">用户登录</div>
+    <div class="message">登录</div>
     <div id="darkbannerwrap"></div>
 
     <form method="post" action='loginto' class="layui-form" >
         @csrf
-        <input name="name" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+        <input name="tel" placeholder="电话号码"  type="text" lay-verify="required" class="layui-input" >
         <hr class="hr15">
         <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
         <hr class="hr15">
+        <p style="color:red" align="center">{{session('msg')}}</p>
         <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
         <hr class="hr20" >
     </form>

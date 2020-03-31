@@ -26,12 +26,24 @@
     <div id="darkbannerwrap"></div>
 
     <form method="post" action='registerto' class="layui-form" >
+        <!--  @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif -->
         @csrf
-        <input name="name" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
+        <input name="tel" placeholder="电话号码"  type="text" lay-verify="required" class="layui-input" >
+        <p style="color:red" class="p">{{$errors->first('tel')}}</p>
         <hr class="hr15">
         <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
+        <p style="color:red" class="p">{{$errors->first('password')}}</p>
         <hr class="hr15">
         <input name="password2" lay-verify="required" placeholder="确认密码"  type="password" class="layui-input">
+        <p style="color:red" class="p">{{$errors->first('password2')}}</p>
         <hr class="hr15">
         <input value="注册" lay-submit lay-filter="login" style="width:100%;" type="submit">
         <hr class="hr20" >
@@ -39,3 +51,5 @@
 </div>
 </body>
 </html>
+<script src='{{ asset("/static/js/jquery-3.2.1.min.js") }}'></script>
+
